@@ -1,0 +1,111 @@
+/* Footer "Ridgeline Dither" (21st.dev), portado a CSS plano. Variables de Zócalo (glaciar sobre blanco). */
+.rdf-root {
+  --rdf-paper: #ffffff; --rdf-ink: #121b26; --rdf-muted: #637184; --rdf-line: #dae3ed; --rdf-heart: #e5484d;
+  --rdf-deep: #1a3e66; --rdf-accent: #34679a; --rdf-n: 3; --rdf-max: 100%; --rdf-scene-min: 260px;
+  --rdf-sans: "Montserrat", system-ui, sans-serif; --rdf-mono: "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  position: relative; display: grid; width: 100%; min-height: 680px; overflow: hidden; isolation: isolate;
+  background: var(--rdf-paper); color: var(--rdf-ink); font-family: var(--rdf-sans);
+  -webkit-font-smoothing: antialiased; --rdf-pad: clamp(20px, 3.2vw, 30px);
+  z-index: 40;
+}
+.rdf-frame {
+  position: relative; display: grid; grid-template-rows: auto auto minmax(var(--rdf-scene-min), 1fr);
+  width: 100%; max-width: var(--rdf-max); margin: 0 auto;
+}
+.rdf-frame::before, .rdf-frame::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 1px; z-index: 3; pointer-events: none;
+  background: var(--rdf-line); transform: scaleY(0); transform-origin: 50% 0;
+  transition: transform 1.4s cubic-bezier(.2,.7,.1,1);
+}
+.rdf-frame::before { left: 0; }
+.rdf-frame::after { right: 0; transition-delay: .08s; }
+.rdf-in .rdf-frame::before, .rdf-in .rdf-frame::after { transform: scaleY(1); }
+
+.rdf-r {
+  opacity: 0; transform: translateY(12px); filter: blur(5px);
+  transition: opacity .9s cubic-bezier(.2,.7,.1,1), transform 1s cubic-bezier(.2,.7,.1,1), filter .9s ease;
+  transition-delay: calc(var(--d, 0) * 1ms);
+}
+.rdf-in .rdf-r { opacity: 1; transform: none; filter: none; }
+
+.rdf-top {
+  position: relative; z-index: 2; display: grid;
+  grid-template-columns: minmax(0, 1.9fr) repeat(var(--rdf-n), minmax(0, 1fr));
+  gap: 28px; padding: clamp(44px, 6.4vw, 80px) var(--rdf-pad) clamp(30px, 4vw, 52px);
+}
+.rdf-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.rdf-logo {
+  display: inline-flex; align-items: center; gap: 10px; color: var(--rdf-ink); text-decoration: none;
+  font-size: 23px; font-weight: 500; letter-spacing: -.035em; line-height: 1;
+}
+.rdf-mark { height: 26px; width: auto; display: block; }
+.rdf-tag { margin: 0; max-width: 30ch; font-size: 13.5px; line-height: 1.55; color: var(--rdf-muted); text-wrap: pretty; }
+.rdf-social { display: flex; gap: 6px; margin: 2px 0 0 -7px; padding: 0; list-style: none; }
+.rdf-social a {
+  display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; color: var(--rdf-muted);
+  transition: color .3s ease, background-color .3s ease, transform .45s cubic-bezier(.2,.7,.1,1);
+}
+.rdf-social a:hover { color: var(--rdf-ink); background: color-mix(in srgb, var(--rdf-deep) 8%, transparent); transform: translateY(-2px); }
+.rdf-social svg { width: 15px; height: 15px; display: block; }
+
+.rdf-col h3 { margin: 4px 0 18px; font: 500 10.5px/1 var(--rdf-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--rdf-muted); }
+.rdf-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
+.rdf-link {
+  position: relative; display: inline-flex; align-items: center; gap: 8px;
+  color: var(--rdf-ink); text-decoration: none; font-size: 14px; line-height: 1.35; letter-spacing: -.005em;
+  transition: color .3s ease, transform .5s cubic-bezier(.2,.7,.1,1);
+}
+.rdf-link::before {
+  content: ""; position: absolute; left: -12px; top: 50%; width: 7px; height: 1px; background: var(--rdf-accent);
+  transform: scaleX(0); transform-origin: 0 50%; transition: transform .45s cubic-bezier(.2,.7,.1,1);
+}
+.rdf-link:hover { color: var(--rdf-accent); transform: translateX(7px); }
+.rdf-link:hover::before { transform: scaleX(1); }
+.rdf-badge {
+  font: 500 9px/1 var(--rdf-mono); letter-spacing: .1em; text-transform: uppercase; padding: 4px 6px 3px; border-radius: 99px;
+  color: var(--rdf-accent); background: color-mix(in srgb, var(--rdf-accent) 11%, transparent);
+}
+.rdf-link:focus-visible, .rdf-logo:focus-visible, .rdf-social a:focus-visible, .rdf-credit:focus-visible {
+  outline: 1px solid var(--rdf-accent); outline-offset: 4px; border-radius: 3px;
+}
+
+.rdf-bar {
+  position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 0 var(--rdf-pad); font-size: 12px; color: var(--rdf-muted);
+}
+.rdf-bar p { margin: 0; }
+.rdf-credit {
+  color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--rdf-muted) 55%, transparent);
+  text-underline-offset: 3px; transition: color .3s ease, text-decoration-color .3s ease;
+}
+.rdf-credit:hover { color: var(--rdf-ink); text-decoration-color: currentColor; }
+.rdf-heart { display: inline-block; width: 11px; height: 11px; margin: 0 3px; vertical-align: -1px; color: var(--rdf-heart); }
+.rdf-credit:hover .rdf-heart { animation: rdf-beat 1s ease-in-out infinite; }
+@keyframes rdf-beat { 0%, 60%, 100% { transform: scale(1); } 15% { transform: scale(1.3); } 32% { transform: scale(.95); } 45% { transform: scale(1.15); } }
+
+.rdf-scene { position: relative; z-index: 1; margin-top: -64px; overflow: hidden; }
+.rdf-scene canvas { position: absolute; left: 0; bottom: 0; display: block; max-width: none; image-rendering: pixelated; image-rendering: crisp-edges; }
+.rdf-alt {
+  position: absolute; left: 0; top: 0; z-index: 2; pointer-events: none; opacity: 0;
+  transition: opacity .35s ease; font: 500 10px/1 var(--rdf-mono); letter-spacing: .08em; color: var(--rdf-ink);
+}
+.rdf-alt i { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--rdf-paper); box-shadow: 0 0 0 1.5px var(--rdf-ink); }
+.rdf-alt b { position: absolute; left: -.5px; bottom: 6px; width: 1px; height: 26px; background: var(--rdf-ink); opacity: .55; }
+.rdf-alt span {
+  position: absolute; left: 0; bottom: 34px; transform: translateX(-50%); white-space: nowrap; padding: 5px 7px 4px;
+  border-radius: 5px; background: color-mix(in srgb, var(--rdf-paper) 88%, transparent); box-shadow: 0 0 0 1px var(--rdf-line);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+}
+.rdf-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+@media (max-width: 760px) {
+  .rdf-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 36px; }
+  .rdf-brand { grid-column: 1 / -1; }
+  .rdf-bar { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .rdf-scene { margin-top: -40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rdf-r, .rdf-frame::before, .rdf-frame::after, .rdf-link, .rdf-link::before, .rdf-social a { transition: none; }
+  .rdf-r { filter: none; }
+  .rdf-credit:hover .rdf-heart { animation: none; }
+}
