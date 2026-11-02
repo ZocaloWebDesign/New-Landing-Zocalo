@@ -222,9 +222,10 @@ html { scroll-behavior: smooth; }
 .quienes__facts span { display: block; margin-top: 6px; font-family: var(--mono); font-size: clamp(10px, .9vw, 12px); letter-spacing: .06em; text-transform: uppercase; color: #5f6b85; }
 
 @media (max-width: 720px) {
-  .scene { width: 230%; left: -65%; }
+  .scene { width: 172%; left: -36%; }
   .corner { font-size: 10px; }
-  .logo { height: 76px; }
+  .corner--tl, .corner--tr { top: 64px; }
+  .logo { height: 68px; }
   .quienes__inner { grid-template-columns: 1fr; grid-template-areas: "tag" "title" "copy" "facts"; }
   .quienes__facts { grid-template-columns: 1fr; gap: 18px; }
 }
@@ -505,3 +506,12 @@ html { scroll-behavior: smooth; }
 .gs__btns { display: flex; gap: 1.8cqw; font-size: 2cqw; }
 .gs__btns span { padding: 1.5cqw 2.8cqw; border-radius: .6cqw; background: #f8f9fa; border: 1px solid #f8f9fa; color: #3c4043; }
 @media (prefers-reduced-motion: reduce) { .gs__caret { animation: none; } }
+
+/* ───────── Celular ───────── */
+@media (max-width: 720px) {
+  .tabs { top: 10px; max-width: calc(100vw - 16px); overflow-x: auto; scrollbar-width: none; padding: 3px; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs__pill { top: 3px; bottom: 3px; }
+  .tabs__tab { padding: 6px 10px; font-size: 12.5px; flex: none; }
+  .hero__who { font-size: 11px; }
+}

@@ -72,6 +72,7 @@
     active.classList.remove('is-active');
     active = tab; tab.classList.add('is-active');
     moveTo(tab);
+    if (nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: tab.offsetLeft - (nav.clientWidth - tab.offsetWidth) / 2, behavior: 'smooth' });
   };
 
   tabs.forEach((t) => {
