@@ -7,3 +7,5 @@ Landing de Zócalo Digital (agencia web). HTML, CSS y JavaScript puros, sin buil
 - `assets/`: logos, capturas de plantillas de referencia y fuentes
 
 Para verla en local: `python3 -m http.server 5210` dentro de esta carpeta.
+
+Publicada en https://new-landing-zocalo.vercel.app (Vercel despliega solo cada vez que se hace push a `main`).
