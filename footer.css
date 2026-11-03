@@ -109,3 +109,10 @@
   .rdf-r { filter: none; }
   .rdf-credit:hover .rdf-heart { animation: none; }
 }
+
+/* Enlaces legales y datos del titular */
+.rdf-bar { flex-wrap: wrap; }
+.rdf-legal { display: flex; flex-direction: row; gap: 16px; flex-wrap: nowrap; white-space: nowrap; }
+.rdf-legal a, .cta__note--legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.rdf-titular { flex-basis: 100%; opacity: .8; }
+@media (max-width: 720px) { .rdf-legal { gap: 10px; } }
