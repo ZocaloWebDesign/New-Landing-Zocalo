@@ -68,7 +68,7 @@
   };
 
   // ── configuración ──
-  const TONES = ['#ffffff', '#d6e6f4', '#a8cae7', '#6b9ecc', '#34679a', '#1a3e66', '#0b2140'];
+  const TONES = ['#ffffff', '#e4e4e4', '#b9b9b9', '#858585', '#4a4a4a', '#222222', '#0a0a0a']; // blancos, grises y negro
   const O = { seed: 23, layers: 7, pixel: 2, mist: 0.8, drift: 1, radius: 130, interactive: true };
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const pal = new Uint32Array(TONES.map((t) => pack(hex(t))));

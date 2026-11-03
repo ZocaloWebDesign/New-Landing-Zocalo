@@ -1,7 +1,7 @@
 /* Footer "Ridgeline Dither" (21st.dev), portado a CSS plano. Variables de Zócalo (glaciar sobre blanco). */
 .rdf-root {
-  --rdf-paper: #ffffff; --rdf-ink: #121b26; --rdf-muted: #637184; --rdf-line: #dae3ed; --rdf-heart: #e5484d;
-  --rdf-deep: #1a3e66; --rdf-accent: #34679a; --rdf-n: 3; --rdf-max: 100%; --rdf-scene-min: 260px;
+  --rdf-paper: #ffffff; --rdf-ink: #0a0a0a; --rdf-muted: #6b6b6b; --rdf-line: #e4e4e4; --rdf-heart: #e5484d;
+  --rdf-deep: #0a0a0a; --rdf-accent: #2b2b2b; --rdf-n: 3; --rdf-max: 100%; --rdf-scene-min: 260px;
   --rdf-sans: "Montserrat", system-ui, sans-serif; --rdf-mono: "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
   position: relative; display: grid; width: 100%; min-height: 680px; overflow: hidden; isolation: isolate;
   background: var(--rdf-paper); color: var(--rdf-ink); font-family: var(--rdf-sans);
