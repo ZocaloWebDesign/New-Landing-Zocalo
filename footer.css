@@ -51,7 +51,7 @@
 .rdf-col h3 { margin: 4px 0 18px; font: 500 10.5px/1 var(--rdf-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--rdf-muted); }
 .rdf-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
 .rdf-link {
-  position: relative; display: inline-flex; align-items: center; gap: 8px;
+  position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 24px;
   color: var(--rdf-ink); text-decoration: none; font-size: 14px; line-height: 1.35; letter-spacing: -.005em;
   transition: color .3s ease, transform .5s cubic-bezier(.2,.7,.1,1);
 }
@@ -75,7 +75,7 @@
 }
 .rdf-bar p { margin: 0; }
 .rdf-credit {
-  color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--rdf-muted) 55%, transparent);
+  display: inline-block; min-height: 24px; line-height: 24px; color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--rdf-muted) 55%, transparent);
   text-underline-offset: 3px; transition: color .3s ease, text-decoration-color .3s ease;
 }
 .rdf-credit:hover { color: var(--rdf-ink); text-decoration-color: currentColor; }
@@ -113,7 +113,7 @@
 /* Enlaces legales y datos del titular */
 .rdf-bar { flex-wrap: wrap; }
 .rdf-legal { display: flex; flex-direction: row; gap: 16px; flex-wrap: nowrap; white-space: nowrap; }
-.rdf-legal a, .cta__note--legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.rdf-legal a, .cta__note--legal a { display: inline-block; min-height: 24px; line-height: 24px; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .rdf-hours { margin-top: 10px; font-size: 12px; color: var(--rdf-muted); line-height: 1.5; }
 @media (min-width: 721px) { .rdf-hours { white-space: nowrap; } }
 @media (max-width: 720px) { .rdf-legal { gap: 10px; } }

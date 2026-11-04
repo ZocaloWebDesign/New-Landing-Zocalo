@@ -189,6 +189,7 @@
   el.style.setProperty('--cycle', (dur + pause) + 's');
   el.style.setProperty('--step', (dur / (n / spread)) + 's');
   el.textContent = '';
+  const sr = document.createElement('span'); sr.className = 'sr-only'; sr.textContent = txt; el.appendChild(sr); // lectores de pantalla: la frase completa
   [...txt].forEach((ch, i) => {
     const s = document.createElement('span');
     s.className = 'c'; s.setAttribute('aria-hidden', 'true');
