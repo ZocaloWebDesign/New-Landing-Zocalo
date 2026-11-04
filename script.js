@@ -386,3 +386,19 @@ void main() {
   new IntersectionObserver(([e]) => { inView = e.isIntersecting; kick(); }).observe(canvas);
   new ResizeObserver(kick).observe(canvas);
 })();
+
+// Anclas internas: los bloques con position:sticky (portada, "Por qué", "Soluciones") cambian de lugar según el scroll.
+// Si el salto nativo parte desde el pie, apunta al final del bloque y no a su comienzo; por eso se apunta a su contenedor.
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+  const id = a.getAttribute('href');
+  if (id.length < 2) return;
+  const target = document.querySelector(id);
+  if (!target) return;
+  const ref = getComputedStyle(target).position === 'sticky' && target.parentElement ? target.parentElement : target;
+  e.preventDefault();
+  const top = ref.getBoundingClientRect().top + window.scrollY;
+  window.scrollTo({ top, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  history.pushState(null, '', id);
+});
