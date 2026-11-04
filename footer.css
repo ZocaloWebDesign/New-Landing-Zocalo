@@ -38,20 +38,21 @@
   display: inline-flex; align-items: center; gap: 10px; color: var(--rdf-ink); text-decoration: none;
   font-size: 23px; font-weight: 500; letter-spacing: -.035em; line-height: 1;
 }
+.rdf-logo, .rdf-credit { min-height: 44px; }
 .rdf-mark { height: 26px; width: auto; display: block; }
 .rdf-tag { margin: 0; max-width: 30ch; font-size: 13.5px; line-height: 1.55; color: var(--rdf-muted); text-wrap: pretty; }
-.rdf-social { display: flex; gap: 6px; margin: 2px 0 0 -7px; padding: 0; list-style: none; }
+.rdf-social { display: flex; gap: 6px; margin: 2px 0 0 -14px; padding: 0; list-style: none; }
 .rdf-social a {
-  display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; color: var(--rdf-muted);
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 8px; color: var(--rdf-muted);
   transition: color .3s ease, background-color .3s ease, transform .45s cubic-bezier(.2,.7,.1,1);
 }
 .rdf-social a:hover { color: var(--rdf-ink); background: color-mix(in srgb, var(--rdf-deep) 8%, transparent); transform: translateY(-2px); }
 .rdf-social svg { width: 15px; height: 15px; display: block; }
 
-.rdf-col h3 { margin: 4px 0 18px; font: 500 10.5px/1 var(--rdf-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--rdf-muted); }
+.rdf-col h3 { margin: 4px 0 18px; font: 500 12px/1 var(--rdf-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--rdf-muted); }
 .rdf-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
 .rdf-link {
-  position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 24px;
+  position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
   color: var(--rdf-ink); text-decoration: none; font-size: 14px; line-height: 1.35; letter-spacing: -.005em;
   transition: color .3s ease, transform .5s cubic-bezier(.2,.7,.1,1);
 }
@@ -62,7 +63,7 @@
 .rdf-link:hover { color: var(--rdf-accent); transform: translateX(7px); }
 .rdf-link:hover::before { transform: scaleX(1); }
 .rdf-badge {
-  font: 500 9px/1 var(--rdf-mono); letter-spacing: .1em; text-transform: uppercase; padding: 4px 6px 3px; border-radius: 99px;
+  font: 500 12px/1 var(--rdf-mono); letter-spacing: .1em; text-transform: uppercase; padding: 4px 6px 3px; border-radius: 99px;
   color: var(--rdf-accent); background: color-mix(in srgb, var(--rdf-accent) 11%, transparent);
 }
 .rdf-link:focus-visible, .rdf-logo:focus-visible, .rdf-social a:focus-visible, .rdf-credit:focus-visible {
@@ -87,7 +88,7 @@
 .rdf-scene canvas { position: absolute; left: 0; bottom: 0; display: block; max-width: none; image-rendering: pixelated; image-rendering: crisp-edges; }
 .rdf-alt {
   position: absolute; left: 0; top: 0; z-index: 2; pointer-events: none; opacity: 0;
-  transition: opacity .35s ease; font: 500 10px/1 var(--rdf-mono); letter-spacing: .08em; color: var(--rdf-ink);
+  transition: opacity .35s ease; font: 500 12px/1 var(--rdf-mono); letter-spacing: .08em; color: var(--rdf-ink);
 }
 .rdf-alt i { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--rdf-paper); box-shadow: 0 0 0 1.5px var(--rdf-ink); }
 .rdf-alt b { position: absolute; left: -.5px; bottom: 6px; width: 1px; height: 26px; background: var(--rdf-ink); opacity: .55; }
