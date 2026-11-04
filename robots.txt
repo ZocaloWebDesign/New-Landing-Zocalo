@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://new-landing-zocalo.vercel.app/sitemap.xml
