@@ -1,5 +1,5 @@
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
   "headers": [
     {
       "source": "/(.*)",
@@ -39,8 +39,12 @@
   ],
   "rewrites": [
     {
-      "source": "/googleae7a74f5ad66f23b.html",
-      "destination": "/googleae7a74f5ad66f23b"
+      "source": "/politica-de-privacidad",
+      "destination": "/politica-de-privacidad.html"
+    },
+    {
+      "source": "/politica-de-cookies",
+      "destination": "/politica-de-cookies.html"
     }
   ]
 }
