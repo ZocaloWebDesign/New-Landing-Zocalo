@@ -25,12 +25,31 @@
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>document.documentElement.classList.add("cargando")</script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;500;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=62">
 <link rel="stylesheet" href="footer.css?v=4">
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- Pantalla de carga: el isotipo se dibuja, sube la base y aparece la frase -->
+<div class="loader" id="loader" role="status" aria-live="polite" aria-label="Cargando Zócalo">
+  <div class="loader__in">
+    <svg class="loader__logo" viewBox="0 0 1258 1231" aria-hidden="true">
+      <g transform="translate(60 60)">
+        <g fill="none" stroke="#fff" stroke-width="100">
+          <path class="ld-s ld-s1" pathLength="1" d="M450 90 L75 480 L365 775"/>
+          <path class="ld-s ld-s2" pathLength="1" d="M795 365 L1065 630 L725 990"/>
+        </g>
+        <polygon class="ld-base" points="512,22 625,2 690,1085 572,1105" fill="#fff"/>
+      </g>
+    </svg>
+    <p class="loader__frase" aria-hidden="true"><span style="--i:0">Todo</span> <span style="--i:1">lo</span> <span style="--i:2">bueno</span> <span style="--i:3">comienza</span> <span style="--i:4">con</span> <span style="--i:5">una</span> <span class="ld-w" style="--i:6">base.</span></p>
+  </div>
+  <div class="loader__bar" aria-hidden="true"><i></i></div>
+  <span class="loader__pct" aria-hidden="true">0</span>
+</div>
 
 <!-- Siluetas trazadas de la foto de referencia (1947×808). Izquierda y derecha -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -368,5 +387,36 @@
 
 <script src="script.js?v=31"></script>
 <script src="footer.js?v=2"></script>
+<script>
+(() => {
+  const root = document.documentElement, el = document.getElementById('loader');
+  if (!el) { root.classList.remove('cargando'); return; }
+  const bar = el.querySelector('.loader__bar i'), pct = el.querySelector('.loader__pct');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const MIN = reduce ? 500 : 2900, MAX = 7000, t0 = performance.now();
+  let loaded = document.readyState === 'complete', done = false, shown = 0;
+  addEventListener('load', () => { loaded = true; });
+  const salir = () => {
+    if (done) return; done = true;
+    bar.style.transform = 'scaleX(1)'; pct.textContent = '100';
+    el.classList.add('is-out');
+    setTimeout(() => { root.classList.remove('cargando'); el.remove(); }, reduce ? 200 : 1000);
+  };
+  const tick = (now) => {
+    if (done) return;
+    const t = now - t0;
+    // avanza con el tiempo mínimo; no pasa de 90 % hasta que la página cargó
+    let target = Math.min(1, t / MIN);
+    if (!loaded) target = Math.min(target, 0.9);
+    shown += (target - shown) * 0.12;
+    if (target >= 1 && shown > 0.995) shown = 1;
+    bar.style.transform = 'scaleX(' + shown.toFixed(3) + ')';
+    pct.textContent = Math.round(shown * 100);
+    if ((loaded && t >= MIN && shown >= 1) || t > MAX) return salir();
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+})();
+</script>
 </body>
 </html>

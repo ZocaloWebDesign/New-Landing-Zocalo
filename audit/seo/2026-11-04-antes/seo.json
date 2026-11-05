@@ -1,0 +1,466 @@
+{
+  "esquema": "zocalo-resultado-1",
+  "area": "seo",
+  "criterio": "seo-3",
+  "local": false,
+  "etiqueta": "antes",
+  "url": "https://new-landing-zocalo.vercel.app/",
+  "fecha": "2026-11-04",
+  "opciones": {
+    "local": false,
+    "keyword": null
+  },
+  "nota": 74,
+  "nota_sin_tope": 74,
+  "veredicto": "MEJORABLE",
+  "bloqueantes": [],
+  "lighthouse_seo": 100,
+  "grupos": [
+    {
+      "g": "A",
+      "nombre": "Indexación y rastreo",
+      "pts": 17,
+      "max": 27,
+      "pct": 63
+    },
+    {
+      "g": "B",
+      "nombre": "Metadatos",
+      "pts": 17,
+      "max": 20,
+      "pct": 85
+    },
+    {
+      "g": "C",
+      "nombre": "Contenido y estructura",
+      "pts": 17,
+      "max": 17,
+      "pct": 100
+    },
+    {
+      "g": "D",
+      "nombre": "Datos estructurados",
+      "pts": 0,
+      "max": 4,
+      "pct": 0
+    },
+    {
+      "g": "E",
+      "nombre": "Vista previa al compartir",
+      "pts": 1,
+      "max": 8,
+      "pct": 13
+    },
+    {
+      "g": "F",
+      "nombre": "Enlaces",
+      "pts": 7,
+      "max": 7,
+      "pct": 100
+    },
+    {
+      "g": "G",
+      "nombre": "Móvil y experiencia",
+      "pts": 8,
+      "max": 8,
+      "pct": 100
+    }
+  ],
+  "datos": {
+    "title": "Zócalo — Portfolio",
+    "desc": "Zócalo Digital. Agencia web: sitios y tiendas online a medida.",
+    "h1": "¿QUIÉNES SOMOS?",
+    "palabras": 664,
+    "headings": 20,
+    "imagenes": 30,
+    "ld_tipos": [],
+    "og": 0
+  },
+  "checks": [
+    {
+      "g": "A",
+      "id": "status",
+      "nombre": "La página responde 200",
+      "max": 3,
+      "estado": "ok",
+      "ev": "HTTP 200",
+      "fix": "La URL debe responder 200 sin errores.",
+      "bloqueante": false,
+      "pts": 3
+    },
+    {
+      "g": "A",
+      "id": "https",
+      "nombre": "Usa HTTPS",
+      "max": 2,
+      "estado": "ok",
+      "ev": "https://new-landing-zocalo.vercel.app/",
+      "fix": "Servir el sitio por HTTPS.",
+      "bloqueante": false,
+      "pts": 2
+    },
+    {
+      "g": "A",
+      "id": "http2https",
+      "nombre": "http:// redirige a https:// con 301",
+      "max": 3,
+      "estado": "ok",
+      "ev": "http → 308 https://new-landing-zocalo.vercel.app/",
+      "fix": "Redirección permanente (301) de http a https.",
+      "bloqueante": false,
+      "pts": 3
+    },
+    {
+      "g": "A",
+      "id": "www",
+      "nombre": "Una sola versión (con o sin www)",
+      "max": 2,
+      "estado": "na",
+      "ev": "Dominio de prueba: no aplica.",
+      "fix": "",
+      "bloqueante": false,
+      "pts": 0
+    },
+    {
+      "g": "A",
+      "id": "noindex",
+      "nombre": "No bloquea la indexación (noindex)",
+      "max": 5,
+      "estado": "ok",
+      "ev": "Sin noindex en meta ni cabecera",
+      "fix": "Quitar noindex (suele quedar heredado de staging).",
+      "bloqueante": false,
+      "pts": 5
+    },
+    {
+      "g": "A",
+      "id": "robots",
+      "nombre": "robots.txt existe y no bloquea todo",
+      "max": 4,
+      "estado": "aviso",
+      "ev": "robots.txt devolvió 404",
+      "fix": "Crear robots.txt que permita rastrear.",
+      "bloqueante": false,
+      "pts": 2
+    },
+    {
+      "g": "A",
+      "id": "robots-sitemap",
+      "nombre": "robots.txt indica el sitemap",
+      "max": 1,
+      "estado": "aviso",
+      "ev": "Sin línea Sitemap:",
+      "fix": "Agregar `Sitemap: https://dominio/sitemap.xml`.",
+      "bloqueante": false,
+      "pts": 0.5
+    },
+    {
+      "g": "A",
+      "id": "sitemap",
+      "nombre": "sitemap.xml válido con las URLs del sitio",
+      "max": 3,
+      "estado": "falla",
+      "ev": "https://new-landing-zocalo.vercel.app/sitemap.xml devolvió 404",
+      "fix": "Crear sitemap.xml con las URLs canónicas absolutas.",
+      "bloqueante": false,
+      "pts": 0
+    },
+    {
+      "g": "A",
+      "id": "canonical",
+      "nombre": "Canonical autorreferente y absoluta",
+      "max": 4,
+      "estado": "falla",
+      "ev": "Sin <link rel=canonical>",
+      "fix": "Agregar canonical absoluta a la URL final de producción.",
+      "bloqueante": false,
+      "pts": 0
+    },
+    {
+      "g": "A",
+      "id": "404",
+      "nombre": "Una URL inexistente devuelve 404 real",
+      "max": 1,
+      "estado": "ok",
+      "ev": "HTTP 404",
+      "fix": "Configurar una página 404 que responda con código 404.",
+      "bloqueante": false,
+      "pts": 1
+    },
+    {
+      "g": "A",
+      "id": "dominio",
+      "nombre": "Usa dominio propio (no de prueba)",
+      "max": 1,
+      "estado": "aviso",
+      "ev": "new-landing-zocalo.vercel.app",
+      "fix": "Antes de entregar al cliente, publicar en su dominio.",
+      "bloqueante": false,
+      "pts": 0.5
+    },
+    {
+      "g": "B",
+      "id": "title",
+      "nombre": "Tiene <title>",
+      "max": 4,
+      "estado": "ok",
+      "ev": "\"Zócalo — Portfolio\"",
+      "fix": "Título único y descriptivo con servicio y marca.",
+      "bloqueante": false,
+      "pts": 4
+    },
+    {
+      "g": "B",
+      "id": "title-len",
+      "nombre": "Largo del title (25 a 65 caracteres)",
+      "max": 3,
+      "estado": "aviso",
+      "ev": "18 caracteres",
+      "fix": "Ajustar a 25 a 65 caracteres para que no se corte.",
+      "bloqueante": false,
+      "pts": 1.5
+    },
+    {
+      "g": "B",
+      "id": "desc",
+      "nombre": "Tiene meta description",
+      "max": 4,
+      "estado": "ok",
+      "ev": "\"Zócalo Digital. Agencia web: sitios y tiendas online a medida.\"",
+      "fix": "Escribir una descripción real de la página.",
+      "bloqueante": false,
+      "pts": 4
+    },
+    {
+      "g": "B",
+      "id": "desc-len",
+      "nombre": "Largo de la description (70 a 165)",
+      "max": 3,
+      "estado": "aviso",
+      "ev": "62 caracteres",
+      "fix": "Ajustar a 70 a 165 caracteres.",
+      "bloqueante": false,
+      "pts": 1.5
+    },
+    {
+      "g": "B",
+      "id": "h1",
+      "nombre": "Exactamente un <h1>",
+      "max": 3,
+      "estado": "ok",
+      "ev": "1 h1: \"¿QUIÉNES SOMOS?\"",
+      "fix": "Un solo h1 que diga de qué trata la página.",
+      "bloqueante": false,
+      "pts": 3
+    },
+    {
+      "g": "B",
+      "id": "lang",
+      "nombre": "Idioma declarado (lang)",
+      "max": 2,
+      "estado": "ok",
+      "ev": "lang=\"es\"",
+      "fix": "Agregar <html lang=\"es-AR\">.",
+      "bloqueante": false,
+      "pts": 2
+    },
+    {
+      "g": "B",
+      "id": "favicon",
+      "nombre": "Favicon",
+      "max": 1,
+      "estado": "ok",
+      "ev": "Declarado",
+      "fix": "Agregar favicon.",
+      "bloqueante": false,
+      "pts": 1
+    },
+    {
+      "g": "C",
+      "id": "html-inicial",
+      "nombre": "El texto está en el HTML inicial (no solo por JavaScript)",
+      "max": 5,
+      "estado": "ok",
+      "ev": "HTML inicial: 675 palabras · renderizado: 664",
+      "fix": "Servir el contenido en el HTML (prerender/SSR); Google ejecuta JS pero con demora.",
+      "bloqueante": false,
+      "pts": 5
+    },
+    {
+      "g": "C",
+      "id": "palabras",
+      "nombre": "Hay texto suficiente (200+ palabras)",
+      "max": 3,
+      "estado": "ok",
+      "ev": "664 palabras",
+      "fix": "Explicar servicios, zona y diferenciales con texto real.",
+      "bloqueante": false,
+      "pts": 3
+    },
+    {
+      "g": "C",
+      "id": "headings",
+      "nombre": "Jerarquía de títulos sin saltos",
+      "max": 2,
+      "estado": "ok",
+      "ev": "h1 h2 h2 h2 h3 h3 h3 h3",
+      "fix": "Ordenar h1 → h2 → h3 sin saltarse niveles.",
+      "bloqueante": false,
+      "pts": 2
+    },
+    {
+      "g": "C",
+      "id": "alt",
+      "nombre": "Imágenes con alt",
+      "max": 4,
+      "estado": "ok",
+      "ev": "30 imágenes; 0 sin alt; 0 con alt tipo nombre de archivo",
+      "fix": "Alt descriptivo (o alt=\"\" si es decorativa).",
+      "bloqueante": false,
+      "pts": 4
+    },
+    {
+      "g": "C",
+      "id": "anchors",
+      "nombre": "Enlaces con texto descriptivo",
+      "max": 3,
+      "estado": "ok",
+      "ev": "0 genéricos/vacíos de 40",
+      "fix": "Que el texto del enlace diga a dónde lleva.",
+      "bloqueante": false,
+      "pts": 3
+    },
+    {
+      "g": "D",
+      "id": "ld",
+      "nombre": "Tiene JSON-LD (en la página ya renderizada)",
+      "max": 4,
+      "estado": "falla",
+      "ev": "Sin JSON-LD",
+      "fix": "Agregar Organization/LocalBusiness + WebSite en JSON-LD.",
+      "bloqueante": false,
+      "pts": 0
+    },
+    {
+      "g": "D",
+      "id": "ld-valido",
+      "nombre": "El JSON-LD no tiene errores de sintaxis",
+      "max": 2,
+      "estado": "na",
+      "ev": "0 bloque(s) inválidos",
+      "fix": "Corregir el JSON.",
+      "bloqueante": false,
+      "pts": 0
+    },
+    {
+      "g": "D",
+      "id": "ld-tipo",
+      "nombre": "Usa un tipo útil (Organization, LocalBusiness, WebSite…)",
+      "max": 2,
+      "estado": "na",
+      "ev": "",
+      "fix": "Usar el tipo más específico para el negocio.",
+      "bloqueante": false,
+      "pts": 0
+    },
+    {
+      "g": "D",
+      "id": "ld-campos",
+      "nombre": "Incluye nombre y URL",
+      "max": 2,
+      "estado": "na",
+      "ev": "Sin entidad principal",
+      "fix": "Completar name y url (y logo si es posible).",
+      "bloqueante": false,
+      "pts": 0
+    },
+    {
+      "g": "E",
+      "id": "og",
+      "nombre": "Open Graph (título, descripción, imagen, url)",
+      "max": 4,
+      "estado": "falla",
+      "ev": "Tiene: ninguno",
+      "fix": "Completar og:title, og:description, og:image y og:url.",
+      "bloqueante": false,
+      "pts": 0
+    },
+    {
+      "g": "E",
+      "id": "og-img",
+      "nombre": "La imagen para compartir existe y es absoluta",
+      "max": 2,
+      "estado": "falla",
+      "ev": "Sin og:image",
+      "fix": "Agregar og:image absoluta (1200×630).",
+      "bloqueante": false,
+      "pts": 0
+    },
+    {
+      "g": "E",
+      "id": "twitter",
+      "nombre": "Tarjeta de X/Twitter",
+      "max": 1,
+      "estado": "aviso",
+      "ev": "Sin twitter:card",
+      "fix": "Agregar twitter:card=summary_large_image.",
+      "bloqueante": false,
+      "pts": 0.5
+    },
+    {
+      "g": "E",
+      "id": "og-extra",
+      "nombre": "og:locale y og:site_name",
+      "max": 1,
+      "estado": "aviso",
+      "ev": "locale=— site_name=—",
+      "fix": "Agregarlos.",
+      "bloqueante": false,
+      "pts": 0.5
+    },
+    {
+      "g": "F",
+      "id": "rotos",
+      "nombre": "Enlaces internos sin romper",
+      "max": 4,
+      "estado": "ok",
+      "ev": "2 enlaces revisados, todos bien",
+      "fix": "Corregir o quitar los enlaces rotos.",
+      "bloqueante": false,
+      "pts": 4
+    },
+    {
+      "g": "F",
+      "id": "anclas",
+      "nombre": "Los enlaces ancla (#) llevan a una sección que existe",
+      "max": 3,
+      "estado": "ok",
+      "ev": "22 anclas, todas con destino",
+      "fix": "Crear la sección con ese id o corregir el enlace.",
+      "bloqueante": false,
+      "pts": 3
+    },
+    {
+      "g": "G",
+      "id": "viewport",
+      "nombre": "Viewport para móviles",
+      "max": 2,
+      "estado": "ok",
+      "ev": "width=device-width, initial-scale=1",
+      "fix": "Agregar <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">.",
+      "bloqueante": false,
+      "pts": 2
+    },
+    {
+      "g": "G",
+      "id": "lighthouse",
+      "nombre": "Lighthouse SEO (comprobaciones automáticas de Google)",
+      "max": 6,
+      "estado": "ok",
+      "ev": "100/100",
+      "fix": "Resolver las comprobaciones que fallan.",
+      "bloqueante": false,
+      "pts": 6
+    }
+  ]
+}
