@@ -1,5 +1,6 @@
 // Lluvia: hilos de luz que caen sobre el fondo, con un poco de viento
 (() => {
+  const root = document.documentElement;
   const cv = document.getElementById('lluvia');
   if (!cv || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const ctx = cv.getContext('2d');
@@ -22,13 +23,13 @@
     W = r.width; H = r.height;
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.round(Math.min(220, Math.max(70, (W * H) / 9000)));
+    const n = Math.round(Math.min(130, Math.max(45, (W * H) / 12000)));
     drops = Array.from({ length: n }, () => make(true));
   };
 
   const draw = (now) => {
     raf = 0;
-    if (!visible || !inView) { last = 0; return; }
+    if (!visible || !inView || root.classList.contains('cargando') || root.classList.contains('hero-tapado')) { last = 0; return; }
     const dt = last ? Math.min((now - last) / 1000, 0.05) : 0;
     last = now;
     ctx.clearRect(0, 0, W, H);
@@ -46,7 +47,18 @@
     }
     raf = requestAnimationFrame(draw);
   };
-  const kick = () => { if (!raf && visible && inView) raf = requestAnimationFrame(draw); };
+  const kick = () => { if (!raf && visible && inView && !root.classList.contains('cargando') && !root.classList.contains('hero-tapado')) raf = requestAnimationFrame(draw); };
+  document.addEventListener('zocalo:listo', kick);   // la lluvia arranca cuando termina la carga
+  // el hero queda tapado por las secciones siguientes: se frena la lluvia y el destello
+  let tapado = false, tick = 0;
+  addEventListener('scroll', () => {
+    if (tick) return;
+    tick = requestAnimationFrame(() => {
+      tick = 0;
+      const t = scrollY > innerHeight * 1.05;
+      if (t !== tapado) { tapado = t; root.classList.toggle('hero-tapado', t); if (!t) kick(); }
+    });
+  }, { passive: true });
 
   new ResizeObserver(() => { size(); kick(); }).observe(cv);
   new IntersectionObserver(([e]) => { inView = e.isIntersecting; kick(); }).observe(cv);
